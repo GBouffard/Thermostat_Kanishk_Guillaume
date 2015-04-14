@@ -22,16 +22,20 @@ describe ('Thermostat', function() {
   });
 
   it('has a minimum temperature of 10 degrees', function() {
-    expect(thermostat.hasMinimumTemperature(10)).toEqual(10);
+    expect(thermostat.hasMinimumTemperature()).toEqual(10);
   });
 
   it('can turn on power saving mode', function() {
     expect(thermostat.PowerSaving(true)).toBe(true)
   });
 
-  // it('has a maximum of 25 when power saving mode is on', function() {
-  //   expect(thermostat.)
-  // });
+  it('has a maximum of 25 when power saving mode is on', function() {
+    thermostat.PowerSaving(true);
+    expect(thermostat.hasMaximumTemperature()).toEqual(25);
+  });
+
+  xit('has a maximum of 32 when power saving mode is off', function(){
+
+  });
 
 });
-

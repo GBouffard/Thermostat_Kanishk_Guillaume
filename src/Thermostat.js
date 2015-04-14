@@ -16,10 +16,14 @@ Thermostat.prototype.toDecreaseTemperature = function(decrease) {
   return 19;
 };
 
-Thermostat.prototype.hasMinimumTemperature = function(minimum) {
+Thermostat.prototype.hasMinimumTemperature = function() {
   return 10;
 };
 
 Thermostat.prototype.PowerSaving = function(state) {
   return true;
+};
+
+Thermostat.prototype.hasMaximumTemperature = function() {
+  return 25;
 };
