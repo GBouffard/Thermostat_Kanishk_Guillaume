@@ -46,6 +46,16 @@ describe ('Thermostat', function() {
   });
 
   it('has a display that is yellow when it starts', function () {
-    expect(thermostat.hasColorDisplay()).toEqual("Yellow");
+    expect(thermostat.hasColorDisplay()).toEqual('Yellow');
+  });
+
+  it('has a display that turns green when the temperature is under 18', function() {
+    thermostat.toDecreaseTemperature(3);
+    expect(thermostat.hasColorDisplay()).toEqual('Green');
+  });
+
+  it('has a display that turns red when the temperature is over 25', function() {
+   thermostat.toIncreaseTemperature(6);
+    expect(thermostat.hasColorDisplay()).toEqual('Red');
   });
 });
