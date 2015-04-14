@@ -26,16 +26,22 @@ describe ('Thermostat', function() {
   });
 
   it('can turn on power saving mode', function() {
-    expect(thermostat.PowerSaving(true)).toBe(true)
+    expect(thermostat.PowerSaving).toBe(true)
   });
+
+  it('can turn off power saving mode', function() {
+    thermostat.togglePowerSaving();
+    expect(thermostat.PowerSaving()).toBe(false);
+  });  
 
   it('has a maximum of 25 when power saving mode is on', function() {
     thermostat.PowerSaving(true);
     expect(thermostat.hasMaximumTemperature()).toEqual(25);
   });
 
-  xit('has a maximum of 32 when power saving mode is off', function(){
-
+  it('has a maximum of 32 when power saving mode is off', function(){
+    thermostat.PowerSaving(false);
+    expect(thermostat.hasMaximumTemperature()).toEqual(32);
   });
 
 });
