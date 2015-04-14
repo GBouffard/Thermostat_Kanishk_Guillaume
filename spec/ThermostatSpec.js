@@ -6,7 +6,11 @@ describe ('Thermostat', function() {
   });
 
   it('starts at 20 degrees', function() {
-    expect(thermostat.isInitialTemperature(20)).toEqual(20);
+    expect(thermostat.hasInitialTemperature(20)).toEqual(20);
+  });
+
+  it('can increase the temperature with the up button', function() {
+    expect(thermostat.toIncreaseTemperature(1)).toEqual(21);
   });
 });
 
