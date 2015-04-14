@@ -1,5 +1,9 @@
 var Thermostat = function() {};
 
+Thermostat.prototype.temperature = function(temperature) {
+  return temperature;
+};
+
 Thermostat.prototype.hasInitialTemperature = function(temperature) {
   return 20;
 };
@@ -14,4 +18,8 @@ Thermostat.prototype.toDecreaseTemperature = function(decrease) {
 
 Thermostat.prototype.hasMinimumTemperature = function(minimum) {
   return 10;
+};
+
+Thermostat.prototype.PowerSaving = function(state) {
+  return true;
 };
