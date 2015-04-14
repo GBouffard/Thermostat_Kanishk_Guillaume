@@ -44,4 +44,8 @@ describe ('Thermostat', function() {
     thermostat.toResetTemperature();
     expect(thermostat.temperature).toEqual(20);
   });
+
+  it('has a display that is yellow when it starts', function () {
+    expect(thermostat.hasColorDisplay()).toEqual("Yellow");
+  });
 });

@@ -1,6 +1,7 @@
 var Thermostat = function() {
   this.PowerSaving = true;
   this.temperature = 20;
+  this.MinimumTemperature = 10;
 };
 
 Thermostat.prototype.temperature = function(temperature) {
@@ -16,7 +17,7 @@ Thermostat.prototype.toDecreaseTemperature = function(decrease) {
 };
 
 Thermostat.prototype.hasMinimumTemperature = function() {
-  return 10;
+  return this.MinimumTemperature;
 };
 
 Thermostat.prototype.hasMaximumTemperature = function() {
@@ -29,5 +30,9 @@ Thermostat.prototype.togglePowerSaving = function() {
 };
 
 Thermostat.prototype.toResetTemperature = function() {
-  return this.temperature = 20
+  return this.temperature = 20;
+};
+
+Thermostat.prototype.hasColorDisplay = function() {
+  return "Yellow";
 };
