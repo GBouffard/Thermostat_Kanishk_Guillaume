@@ -5,12 +5,8 @@ describe ('Thermostat', function() {
     thermostat = new Thermostat();
   });
 
-  it ('has a temperature', function() {
-    expect(thermostat.temperature(22)).toEqual(22);
-  }); 
-
   it('starts at 20 degrees', function() {
-    expect(thermostat.hasInitialTemperature(20)).toEqual(20);
+    expect(thermostat.temperature).toEqual(20);
   });
 
   it('can increase the temperature with the up button', function() {
@@ -43,4 +39,9 @@ describe ('Thermostat', function() {
     expect(thermostat.hasMaximumTemperature()).toEqual(32);
   });
 
+  it('can reset the temperature to 20 by hitting a reset button', function() {
+    thermostat.toIncreaseTemperature(4);
+    thermostat.toResetTemperature();
+    expect(thermostat.temperature).toEqual(20);
+  });
 });

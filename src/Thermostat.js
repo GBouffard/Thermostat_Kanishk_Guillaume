@@ -1,21 +1,18 @@
 var Thermostat = function() {
   this.PowerSaving = true;
+  this.temperature = 20;
 };
 
 Thermostat.prototype.temperature = function(temperature) {
   return temperature;
 };
 
-Thermostat.prototype.hasInitialTemperature = function(temperature) {
-  return 20;
-};
-
 Thermostat.prototype.toIncreaseTemperature = function(increase) {
-  return 21;
+  return this.temperature += increase;
 };
 
 Thermostat.prototype.toDecreaseTemperature = function(decrease) {
-  return 19;
+  return this.temperature -= decrease;
 };
 
 Thermostat.prototype.hasMinimumTemperature = function() {
@@ -29,4 +26,8 @@ Thermostat.prototype.hasMaximumTemperature = function() {
 
 Thermostat.prototype.togglePowerSaving = function() {
   return this.PowerSaving = false;
+};
+
+Thermostat.prototype.toResetTemperature = function() {
+  return this.temperature = 20
 };
